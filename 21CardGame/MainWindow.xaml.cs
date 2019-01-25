@@ -23,6 +23,7 @@ namespace _21CardGame
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
