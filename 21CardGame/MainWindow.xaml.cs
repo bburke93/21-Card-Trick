@@ -21,15 +21,52 @@ namespace _21CardGame
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region GLOBAL VARIABLES
+        double dColumnClicked;
         /// <summary>
         /// indicates whether the player has selected a card
         /// </summary>
         private bool hasSelectedCard = false;
+        #endregion
 
+
+        #region METHODS
         public MainWindow()
         {
             InitializeComponent();
             
+        }
+
+        /// <summary>
+        /// Selects and Highlights the column of cards Clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CanCardContainer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //gets the canvas that was clicked
+            Canvas canvasClicked = (Canvas)LogicalTreeHelper.GetParent(e.OriginalSource as DependencyObject);
+
+            //only one column gets highlighted at a time
+            dColumnClicked = char.GetNumericValue(canvasClicked.Name.Last());
+            switch (dColumnClicked)
+            {
+                case 1:
+                    borderColumn1.BorderThickness = new Thickness(10);
+                    borderColumn2.BorderThickness = new Thickness(0);
+                    borderColumn3.BorderThickness = new Thickness(0);
+                    break;
+                case 2:
+                    borderColumn2.BorderThickness = new Thickness(10);
+                    borderColumn1.BorderThickness = new Thickness(0);
+                    borderColumn3.BorderThickness = new Thickness(0);
+                    break;
+                case 3:
+                    borderColumn3.BorderThickness = new Thickness(10);
+                    borderColumn2.BorderThickness = new Thickness(0);
+                    borderColumn1.BorderThickness = new Thickness(0);
+                    break;
+            }
         }
 
         /// <summary>
@@ -173,7 +210,10 @@ namespace _21CardGame
                 throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
             }
         }
+        #endregion
 
+
+        #region SUPPORT FUNCTIONS
         /// <summary>
         /// handles errors
         /// </summary>
@@ -191,5 +231,6 @@ namespace _21CardGame
                 System.IO.File.AppendAllText(@"C:\Error.txt", Environment.NewLine + "HandleError Exception: " + ex.Message);
             }
         }
+        #endregion
     }
 }
