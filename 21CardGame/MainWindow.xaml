@@ -55,6 +55,11 @@
             <Image x:Name="c3image_Copy5" Height="190" Margin="0,300,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
         </Canvas>
         <TextBlock x:Name="txtBlkDealer" TextAlignment="Center" Grid.Column="1" HorizontalAlignment="Left" Margin="0,25,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Instructions" VerticalAlignment="Top" Height="128" Width="595" Grid.ColumnSpan="3" Foreground="White" FontSize="24" FontFamily="Tahoma"/>
+        <Button x:Name="Start_Button" Content="Start" Grid.Column="2" HorizontalAlignment="Left" Margin="53,534,0,0" Grid.Row="2" VerticalAlignment="Top" Width="113" Height="42" Click="Start_Button_Click"/>
+        <Button x:Name="pickedCardButton" Content="I have selected &amp; memorized one card" Grid.Column="1" HorizontalAlignment="Left" Margin="189,534,0,0" Grid.Row="2" VerticalAlignment="Top" Width="231" Height="42" Grid.ColumnSpan="3" Click="pickedCardButton_Click" Visibility="Hidden"/>
+        <Button x:Name="buttoncolumn1" Content="Column 1" Grid.Column="1" HorizontalAlignment="Left" Margin="64,507,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="buttoncolumn_Click" Tag="0" Visibility="Hidden"/>
+        <Button x:Name="buttoncolumn2" Content="Column 2" Grid.Column="2" HorizontalAlignment="Left" Margin="68,509,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="buttoncolumn_Click" Tag="1" Visibility="Hidden"/>
+        <Button x:Name="buttoncolumn3" Content="Column 3" Grid.Column="3" HorizontalAlignment="Left" Margin="63,509,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="buttoncolumn_Click" Tag="2" Visibility="Hidden"/>
 
     </Grid>
 </Window>
