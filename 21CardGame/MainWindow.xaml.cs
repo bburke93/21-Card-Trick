@@ -42,7 +42,7 @@ namespace _21CardGame
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void CanCardContainer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void CanvasCardContainer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //gets the canvas that was clicked
             Canvas canvasClicked = (Canvas)LogicalTreeHelper.GetParent(e.OriginalSource as DependencyObject);
@@ -52,6 +52,7 @@ namespace _21CardGame
             switch (dColumnClicked)
             {
                 case 1:
+                    hideCards();
                     borderColumn1.BorderThickness = new Thickness(10);
                     borderColumn2.BorderThickness = new Thickness(0);
                     borderColumn3.BorderThickness = new Thickness(0);
@@ -214,6 +215,22 @@ namespace _21CardGame
 
 
         #region SUPPORT FUNCTIONS
+        /// <summary>
+        /// Hides the cards on the UI
+        /// </summary>
+        void hideCards()
+        {
+            canvasCardContainer.Visibility = Visibility.Hidden;
+        }
+        /// <summary>
+        /// Shows the cards on the UI
+        /// </summary>
+        void showCards()
+        {
+            canvasCardContainer.Visibility = Visibility.Visible;
+        }
+
+
         /// <summary>
         /// handles errors
         /// </summary>
