@@ -9,7 +9,7 @@ namespace _21CardGame
     class Column
     {
         private int id;
-        Card[] cardArr = new Card[7];
+        private Card[] cardArr = new Card[7];
 
         public void addCard(Card card)
         {
