@@ -8,19 +8,12 @@ namespace _21CardGame
 {
     class Column
     {
-        private int id;
-        private Card[] cardArr = new Card[7];
+        public int id;
+        public List<Card> columnCards;
 
-        public void addCard(Card card)
+        public void addCard(Card tempCard)
         {
-            for (int i = 0; i < 7; i++)
-            {
-                if (cardArr[i] == null)
-                {
-                    cardArr[i] = card;
-                    break;
-                }
-            }
+            columnCards.Add(tempCard);
         }
     }
 }
