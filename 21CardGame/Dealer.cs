@@ -44,9 +44,9 @@ namespace _21CardGame
         /// <summary>
         /// Add a card to the deck
         /// </summary>
-        public void PickupCards(Card temp)
+        public void PickupColumn(Column temp)
         {
-            randomDeck.Add(temp);
+            randomDeck.AddRange(temp.columnCards);
         }
 
         /// <summary>

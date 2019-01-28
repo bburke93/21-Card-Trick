@@ -18,13 +18,59 @@ namespace _21CardGame
             column1.id = 1;
             column2.id = 2;
             column3.id = 3;
-            for(int i =0; i < 7; i++)
+            
+            
+        }
+
+        public void pickupColumns(int columnIdChosen)
+        {
+            switch (columnIdChosen)
             {
-                for (int j = 1; j <= 3; j++){ 
+                case 1:
+                    dealer.PickupColumn(column2);
+                    column2.columnCards.Clear();
+
+                    dealer.PickupColumn(column1);
+                    column1.columnCards.Clear();
+
+                    dealer.PickupColumn(column3);
+                    column3.columnCards.Clear();
+                    break;
+                case 2:
+                    dealer.PickupColumn(column1);
+                    column1.columnCards.Clear();
+
+                    dealer.PickupColumn(column2);
+                    column2.columnCards.Clear();
+
+                    dealer.PickupColumn(column3);
+                    column3.columnCards.Clear();
+                    break;
+                case 3:
+                    dealer.PickupColumn(column1);
+                    column1.columnCards.Clear();
+
+                    dealer.PickupColumn(column3);
+                    column3.columnCards.Clear();
+
+                    dealer.PickupColumn(column2);
+                    column2.columnCards.Clear();
+                    break;
+                default:
+                    break;
+
+            }
+        }
+
+        public void dealToColumns()
+        {
+            for (int i = 0; i < 7; i++)
+            {
+                for (int j = 1; j <= 3; j++)
+                {
                     AddToColumn(j, dealer.Deal());
                 }
             }
-            
         }
 
         public void AddToColumn(int columnID, Card card)
