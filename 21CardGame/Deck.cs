@@ -56,7 +56,7 @@ namespace _21CardGame
         {
             Random rng = new Random();
             //remove cards until there are 21 cards in the deck
-            while (deck.Count >= 21)
+            while (deck.Count > 21)
             {
                 deck.Remove(deck[rng.Next(deck.Count)]);
             }

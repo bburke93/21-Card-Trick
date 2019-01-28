@@ -26,6 +26,7 @@ namespace _21CardGame
         public Dealer()
         {
             cardDeck = new Deck();
+            cardDeck.Shuffle();
             cardDeck.Random21();
             randomDeck = cardDeck.deck;
         }

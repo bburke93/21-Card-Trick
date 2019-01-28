@@ -32,6 +32,7 @@ namespace _21CardGame
         {
             InitializeComponent();
             oBoard = new Board();
+            
         }
 
         /// <summary>

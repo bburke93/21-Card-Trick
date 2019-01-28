@@ -11,8 +11,13 @@ namespace _21CardGame
         public int id;
         public List<Card> columnCards;
 
+        public Column() {
+            columnCards = new List<Card>();
+        }
+
         public void addCard(Card tempCard)
         {
+            
             columnCards.Add(tempCard);
         }
     }
