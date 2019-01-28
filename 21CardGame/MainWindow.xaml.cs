@@ -66,7 +66,7 @@ namespace _21CardGame
         private void CanvasCardContainer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             //Clicked a column
-                pickedCardButton.Visibility = Visibility.Visible;
+                btnPickedCard.Visibility = Visibility.Visible;
 
             //gets the canvas that was clicked
             Canvas canvasClicked = (Canvas)LogicalTreeHelper.GetParent(e.OriginalSource as DependencyObject);
@@ -98,11 +98,11 @@ namespace _21CardGame
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void pickedCardButton_Click(object sender, RoutedEventArgs e)
+        private void btnPickedCardClick(object sender, RoutedEventArgs e)
         {
             try
             {
-                pickedCardButton.Visibility = Visibility.Hidden;
+                btnPickedCard.Visibility = Visibility.Hidden;
                 //indicateColumn();
             }
             catch (Exception ex)
@@ -152,15 +152,16 @@ namespace _21CardGame
                     sInstruction = "Pick a card by Selecting the Column that it's in. \nMemorize that card.";
                     break;
                 case 2:
-                    sInstruction = "Click on the Column the card is in.";
+                    sInstruction = "Click on the Column that your card is in.";
                     break;
                 case 3:
                     sInstruction = "All right last time, click the Column your card is in.";
                     break;
                 default:
-                    sInstruction = "Your card the " + "card" + ".";
+                    sInstruction = "Your card is the " + "card" + ".";
                     break;
             }
+            txtBlkDealer.Text = sInstruction;
         }
         #endregion
 
