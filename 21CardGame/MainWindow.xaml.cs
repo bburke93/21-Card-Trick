@@ -38,6 +38,31 @@ namespace _21CardGame
         }
 
         /// <summary>
+        /// Starts the 21 Card Trick
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnStartButtonClick(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //Visibilities
+                btnStartButton.Visibility = Visibility.Hidden;
+                canvasCardContainer.Visibility = Visibility.Visible;
+
+                //Dealer shuffles and selects 21 cards 
+
+                deal();
+            }
+            catch (Exception ex)
+            {
+                HandleError(MethodInfo.GetCurrentMethod().DeclaringType.Name,
+                    MethodInfo.GetCurrentMethod().Name, ex.Message);
+            }
+
+        }
+
+        /// <summary>
         /// Selects and Highlights the column of cards Clicked
         /// </summary>
         /// <param name="sender"></param>
@@ -52,7 +77,6 @@ namespace _21CardGame
             switch (dColumnClicked)
             {
                 case 1:
-                    hideCards();
                     borderColumn1.BorderThickness = new Thickness(10);
                     borderColumn2.BorderThickness = new Thickness(0);
                     borderColumn3.BorderThickness = new Thickness(0);
@@ -70,28 +94,7 @@ namespace _21CardGame
             }
         }
 
-        /// <summary>
-        /// What happens when the Start Button is clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void Start_Button_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Start_Button.Visibility = Visibility.Hidden;
 
-                //Dealer shuffles and selects 21 cards 
-
-                deal();
-            }
-            catch (Exception ex)
-            {
-                HandleError(MethodInfo.GetCurrentMethod().DeclaringType.Name,
-                    MethodInfo.GetCurrentMethod().Name, ex.Message);
-            }
-
-        }
 
         /// <summary>
         /// deals the cards
@@ -158,9 +161,9 @@ namespace _21CardGame
         {
             try
             {
-                buttoncolumn1.Visibility = Visibility.Visible;
-                buttoncolumn2.Visibility = Visibility.Visible;
-                buttoncolumn3.Visibility = Visibility.Visible;
+                //buttoncolumn1.Visibility = Visibility.Visible;
+                //buttoncolumn2.Visibility = Visibility.Visible;
+                //buttoncolumn3.Visibility = Visibility.Visible;
             }
             catch (Exception ex)
             {
@@ -177,9 +180,9 @@ namespace _21CardGame
         {
             try
             {
-                buttoncolumn1.Visibility = Visibility.Hidden;
-                buttoncolumn2.Visibility = Visibility.Hidden;
-                buttoncolumn3.Visibility = Visibility.Hidden;
+                //buttoncolumn1.Visibility = Visibility.Hidden;
+                //buttoncolumn2.Visibility = Visibility.Hidden;
+                //buttoncolumn3.Visibility = Visibility.Hidden;
 
                 Button column = (Button)sender;
 
@@ -222,12 +225,38 @@ namespace _21CardGame
         {
             canvasCardContainer.Visibility = Visibility.Hidden;
         }
+
         /// <summary>
         /// Shows the cards on the UI
         /// </summary>
         void showCards()
         {
+            //With a for loop, lay down cards row by row.
             canvasCardContainer.Visibility = Visibility.Visible;
+        }
+
+        /// <summary>
+        /// The dealers instructions based on the current round;
+        /// </summary>
+        void dealerInstructions()
+        {
+            int round = 0; //delete later
+            string sInstruction;
+            switch (round)
+            {
+                case 1:
+                    sInstruction = "Pick a card by Selecting the Column that it's in. \nMemorize that card.";
+                    break;
+                case 2:
+                    sInstruction = "Click on the Column the card is in.";
+                    break;
+                case 3:
+                    sInstruction = "All right last time, click the Column your card is in.";
+                    break;
+                default:
+                    sInstruction = "Your card the " + "card" + ".";
+                    break;
+            }
         }
 
 
