@@ -11,7 +11,7 @@ namespace _21CardGame
         /// <summary>
         /// Count of how many times the cards have been dealt out
         /// </summary>
-        private int dealNumber = 0;
+        public int dealNumber = 0;
 
         /// <summary>
         /// Full 52 card deck
@@ -26,31 +26,34 @@ namespace _21CardGame
         public Dealer()
         {
             cardDeck = new Deck();
-            //randomDeck = cardDeck.Random21();
+            cardDeck.Random21();
+            randomDeck = cardDeck.deck;
         }
 
         /// <summary>
-        /// Deal the 21 cards out
+        /// Deal out card from top of deck
         /// </summary>
-        public void Deal()
+        public Card Deal()
         {
-
+            Card temp = randomDeck[0];
+            randomDeck.RemoveAt(0);
+            return temp;
         }
 
         /// <summary>
-        /// Add cards back to the list in specific order
+        /// Add a card to the deck
         /// </summary>
-        public void PickupCards()
+        public void PickupCards(Card temp)
         {
-
+            randomDeck.Add(temp);
         }
 
         /// <summary>
         /// Reveal to the user the secret card they picked
         /// </summary>
-        public void RevealCard()
+        public Card RevealCard()
         {
-
+            return randomDeck[10];
         }
     }
 }

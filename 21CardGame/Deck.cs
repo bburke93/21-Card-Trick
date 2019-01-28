@@ -8,7 +8,7 @@ namespace _21CardGame
 {
     class Deck
     {
-        private List<Card> deck;
+        public List<Card> deck;
 
         /// <summary>
         /// Deck constructor generate list of 52 cards
