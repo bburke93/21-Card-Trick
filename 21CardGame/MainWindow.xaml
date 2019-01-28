@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_21CardGame"
-        mc:Ignorable="d" Height="977.269" Width="755" ResizeMode="CanMinimize" Cursor="Arrow" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
+        mc:Ignorable="d" Height="856.308" Width="758.1" ResizeMode="CanMinimize" Cursor="Arrow" WindowStartupLocation="CenterScreen" ShowInTaskbar="False">
     <Window.Background>
         <ImageBrush ImageSource="Images/backgroundWoodTable.jpg"/>
     </Window.Background>
@@ -36,43 +36,38 @@
         <Canvas x:Name="canvasCardContainer" Grid.Column="1" HorizontalAlignment="Left" Height="488" Margin="32,2,0,0" Grid.Row="2" VerticalAlignment="Top" Width="527" Grid.ColumnSpan="3" Visibility="Hidden" MouseLeftButtonDown="CanvasCardContainer_MouseLeftButtonDown">
             <Border x:Name="borderColumn1"  CornerRadius="10" BorderBrush="#FF99FFFF" BorderThickness="0" Grid.Column="1" Height="510" Grid.Row="1" Width="150">
                 <Canvas  x:Name="canColumn1" Grid.Column="1"  Grid.Row="2">
-                    <Image x:Name="c2image" Grid.Column="2" Height="190" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
-                    <Image x:Name="c2image_Copy" Grid.Column="2" Height="190" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
-                    <Image x:Name="c2image_Copy1" Height="190" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
-                    <Image x:Name="c2image_Copy2" Height="190" Margin="0,150,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
-                    <Image x:Name="c2image_Copy3" Height="190" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
-                    <Image x:Name="c2image_Copy4" Height="190" Margin="0,250,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
-                    <Image x:Name="c2image_Copy5" Height="190" Margin="0,300,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
+                    <Image x:Name="c1r1" Grid.Column="2" Height="190" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
+                    <Image x:Name="c1r2" Grid.Column="2" Height="190" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
+                    <Image x:Name="c1r3" Height="190" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
+                    <Image x:Name="c1r4" Height="190" Margin="0,150,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
+                    <Image x:Name="c1r5" Height="190" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
+                    <Image x:Name="c1r6" Height="190" Margin="0,250,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
+                    <Image x:Name="c1r7" Height="190" Margin="0,300,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="2"/>
                 </Canvas>
             </Border>
             <Border x:Name="borderColumn2"  CornerRadius="10" BorderBrush="#FF99FFFF" BorderThickness="0" Grid.Column="2" HorizontalAlignment="Left" Height="510"  Grid.Row="2" VerticalAlignment="Top" Width="151" Canvas.Left="182">
                 <Canvas x:Name="canColumn2"  Grid.Column="2"  Grid.Row="2">
-                    <Image x:Name="c1image" Grid.Column="1" Height="190" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
-                    <Image x:Name="c1image_Copy" Grid.Column="1" Height="190" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
-                    <Image x:Name="c1image_Copy1" Height="190" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
-                    <Image x:Name="c1image_Copy2" Height="190" Margin="0,150,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
-                    <Image x:Name="c1image_Copy3" Height="190" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
-                    <Image x:Name="c1image_Copy4" Height="190" Margin="0,250,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
-                    <Image x:Name="c1image_Copy5" Height="190" Margin="0,300,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
+                    <Image x:Name="c2r1" Grid.Column="1" Height="190" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
+                    <Image x:Name="c2r2" Grid.Column="1" Height="190" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
+                    <Image x:Name="c2r3" Height="190" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
+                    <Image x:Name="c2r4" Height="190" Margin="0,150,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
+                    <Image x:Name="c2r5" Height="190" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
+                    <Image x:Name="c2r6" Height="190" Margin="0,250,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
+                    <Image x:Name="c2r7" Height="190" Margin="0,300,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="1"/>
                 </Canvas>
             </Border>
             <Border x:Name="borderColumn3"  CornerRadius="10" BorderBrush="#FF99FFFF" BorderThickness="0" Grid.Column="3" Height="510" Grid.Row="2" Width="151" Canvas.Left="365">
                 <Canvas x:Name="canColumn3">
-                    <Image x:Name="c3image" Grid.Column="3" Height="190" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
-                    <Image x:Name="c3image_Copy" Grid.Column="3" Height="190" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
-                    <Image x:Name="c3image_Copy1" Height="190" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
-                    <Image x:Name="c3image_Copy2" Height="190" Margin="0,150,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
-                    <Image x:Name="c3image_Copy3" Height="190" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
-                    <Image x:Name="c3image_Copy4" Height="190" Margin="0,250,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
-                    <Image x:Name="c3image_Copy5" Height="190" Margin="0,300,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
+                    <Image x:Name="c3r1" Grid.Column="3" Height="190" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
+                    <Image x:Name="c3r2" Grid.Column="3" Height="190" Margin="0,50,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png"/>
+                    <Image x:Name="c3r3" Height="190" Margin="0,100,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
+                    <Image x:Name="c3r4" Height="190" Margin="0,150,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
+                    <Image x:Name="c3r5" Height="190" Margin="0,200,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
+                    <Image x:Name="c3r6" Height="190" Margin="0,250,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
+                    <Image x:Name="c3r7" Height="190" Margin="0,300,0,0" Grid.Row="1" VerticalAlignment="Top" Source="Images/Cards/10_of_clubs.png" Grid.Column="3"/>
                 </Canvas>
             </Border>
         </Canvas>
 
-        <!--
-        <Button x:Name="buttoncolumn1" Content="Column 1" Grid.Column="1" HorizontalAlignment="Left" Margin="64,507,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="buttoncolumn_Click" Tag="0" Visibility="Hidden"/>
-        <Button x:Name="buttoncolumn2" Content="Column 2" Grid.Column="2" HorizontalAlignment="Left" Margin="68,509,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="buttoncolumn_Click" Tag="1" Visibility="Hidden"/>
-        <Button x:Name="buttoncolumn3" Content="Column 3" Grid.Column="3" HorizontalAlignment="Left" Margin="63,509,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="buttoncolumn_Click" Tag="2" Visibility="Hidden"/>
-        -->
     </Grid>
 </Window>

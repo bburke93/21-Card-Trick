@@ -23,10 +23,7 @@ namespace _21CardGame
     {
         #region GLOBAL VARIABLES
         double dColumnClicked;
-        /// <summary>
-        /// indicates whether the player has selected a card
-        /// </summary>
-        private bool hasSelectedCard = false;
+        Board oBoard;
         #endregion
 
 
@@ -34,7 +31,7 @@ namespace _21CardGame
         public MainWindow()
         {
             InitializeComponent();
-            
+            oBoard = new Board();
         }
 
         /// <summary>
@@ -51,8 +48,7 @@ namespace _21CardGame
                 canvasCardContainer.Visibility = Visibility.Visible;
 
                 //Dealer shuffles and selects 21 cards 
-
-                deal();
+                showCards();
             }
             catch (Exception ex)
             {
@@ -69,6 +65,9 @@ namespace _21CardGame
         /// <param name="e"></param>
         private void CanvasCardContainer_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            //Clicked a column
+                pickedCardButton.Visibility = Visibility.Visible;
+
             //gets the canvas that was clicked
             Canvas canvasClicked = (Canvas)LogicalTreeHelper.GetParent(e.OriginalSource as DependencyObject);
 
@@ -94,46 +93,6 @@ namespace _21CardGame
             }
         }
 
-
-
-        /// <summary>
-        /// deals the cards
-        /// </summary>
-        private void deal()
-        {
-            try
-            {
-                //call Dealer.deal()
-
-                //Deal cards to GUI using the info from the column class
-
-                //check if player has picked a card
-                if (hasSelectedCard)
-                    indicateColumn();
-                else
-                    pickCard();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Makes it so the player can indicate that they have selected a card
-        /// </summary>
-        private void pickCard()
-        {
-            try
-            {
-                pickedCardButton.Visibility = Visibility.Visible;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
-            }
-        }
-
         /// <summary>
         /// what happens when the picked card button is clicked
         /// </summary>
@@ -144,74 +103,12 @@ namespace _21CardGame
             try
             {
                 pickedCardButton.Visibility = Visibility.Hidden;
-                hasSelectedCard = true;
-                indicateColumn();
+                //indicateColumn();
             }
             catch (Exception ex)
             {
                 HandleError(MethodInfo.GetCurrentMethod().DeclaringType.Name,
                     MethodInfo.GetCurrentMethod().Name, ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// makes it so the player can choose a column
-        /// </summary>
-        private void indicateColumn()
-        {
-            try
-            {
-                //buttoncolumn1.Visibility = Visibility.Visible;
-                //buttoncolumn2.Visibility = Visibility.Visible;
-                //buttoncolumn3.Visibility = Visibility.Visible;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// what happens when a column is selected
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttoncolumn_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                //buttoncolumn1.Visibility = Visibility.Hidden;
-                //buttoncolumn2.Visibility = Visibility.Hidden;
-                //buttoncolumn3.Visibility = Visibility.Hidden;
-
-                Button column = (Button)sender;
-
-                pickupCards();
-            }
-            catch (Exception ex)
-            {
-                HandleError(MethodInfo.GetCurrentMethod().DeclaringType.Name,
-                    MethodInfo.GetCurrentMethod().Name, ex.Message);
-            }
-
-        }
-
-        /// <summary>
-        /// picks up the cards
-        /// </summary>
-        private void pickupCards()
-        {
-            try
-            {
-                //call Dealer.pickupCards() & pass in column.Tag //tags: 0, 1, 2
-
-                //GUI picks up cards
-
-                deal();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(MethodInfo.GetCurrentMethod().DeclaringType.Name + "." + MethodInfo.GetCurrentMethod().Name + " -> " + ex.Message);
             }
         }
         #endregion
@@ -231,7 +128,14 @@ namespace _21CardGame
         /// </summary>
         void showCards()
         {
+            //call Dealer.deal()
+
+            //Deal cards to GUI using the info from the column class
             //With a for loop, lay down cards row by row.
+            //foreach (var card in )
+            //{
+
+            //}
             canvasCardContainer.Visibility = Visibility.Visible;
         }
 
@@ -258,8 +162,10 @@ namespace _21CardGame
                     break;
             }
         }
+        #endregion
 
 
+        #region ERROR HANDLING
         /// <summary>
         /// handles errors
         /// </summary>
