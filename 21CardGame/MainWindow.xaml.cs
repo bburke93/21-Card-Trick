@@ -22,7 +22,7 @@ namespace _21CardGame
     public partial class MainWindow : Window
     {
         #region GLOBAL VARIABLES
-        double dColumnClicked;
+        int dColumnClicked;
         Board oBoard;
         #endregion
 
@@ -44,12 +44,15 @@ namespace _21CardGame
         {
             try
             {
-                //Visibilities
-                btnStartButton.Visibility = Visibility.Hidden;
-                canvasCardContainer.Visibility = Visibility.Visible;
-
                 //Dealer shuffles and selects 21 cards 
+                oBoard.dealToColumns();
+
+                //UI hides start button, then shows cards
+                hideCards();
                 showCards();
+
+                //UI shows instructions
+                dealerInstructions(oBoard.dealer.dealNumber);
             }
             catch (Exception ex)
             {
@@ -73,7 +76,7 @@ namespace _21CardGame
             Canvas canvasClicked = (Canvas)LogicalTreeHelper.GetParent(e.OriginalSource as DependencyObject);
 
             //only one column gets highlighted at a time
-            dColumnClicked = char.GetNumericValue(canvasClicked.Name.Last());
+            dColumnClicked = (int)char.GetNumericValue(canvasClicked.Name.Last());
             switch (dColumnClicked)
             {
                 case 1:
@@ -103,8 +106,27 @@ namespace _21CardGame
         {
             try
             {
-                btnPickedCard.Visibility = Visibility.Hidden;
-                //indicateColumn();
+                //display instructions for round
+                dealerInstructions(oBoard.dealer.dealNumber);
+
+                //if its not after the third round
+                if (oBoard.dealer.dealNumber != 4)
+                {
+                    //pickup the cards, hide the button
+                    canvasCardContainer.Visibility = Visibility.Hidden;
+                    btnPickedCard.Visibility = Visibility.Hidden;
+
+                    //Collect the columns
+                    oBoard.pickupColumns(dColumnClicked);
+                    //deal the columns
+                    oBoard.dealToColumns();
+                    //show in the UI
+                    showCards();
+                }
+                else
+                {
+                    
+                }
             }
             catch (Exception ex)
             {
@@ -122,6 +144,8 @@ namespace _21CardGame
         void hideCards()
         {
             canvasCardContainer.Visibility = Visibility.Hidden;
+            btnStartButton.Visibility = Visibility.Hidden;
+            btnPickedCard.Visibility = Visibility.Hidden;
         }
 
         /// <summary>
@@ -129,23 +153,37 @@ namespace _21CardGame
         /// </summary>
         void showCards()
         {
-            //call Dealer.deal()
-
-            //Deal cards to GUI using the info from the column class
-            //With a for loop, lay down cards row by row.
-            //foreach (var card in )
-            //{
-
-            //}
+            //show the cards
             canvasCardContainer.Visibility = Visibility.Visible;
+
+            //With a for loop, lay down the cards
+            int count = 0;
+            foreach (Image imgCard in canColumn1.Children)
+                {
+                imgCard.Source = new BitmapImage(new Uri(@"Images/Cards/"+ oBoard.column1.columnCards[count], UriKind.RelativeOrAbsolute));
+                count++;
+                }
+            count = 0;
+            foreach (Image imgCard in canColumn2.Children)
+            {
+                imgCard.Source = new BitmapImage(new Uri(@"Images/Cards/" + oBoard.column2.columnCards[count], UriKind.RelativeOrAbsolute));
+                count++;
+            }
+            count = 0;
+            foreach (Image imgCard in canColumn3.Children)
+            {
+                imgCard.Source = new BitmapImage(new Uri(@"Images/Cards/" + oBoard.column3.columnCards[count], UriKind.RelativeOrAbsolute));
+                count++;
+            }
+
+
         }
 
         /// <summary>
         /// The dealers instructions based on the current round;
         /// </summary>
-        void dealerInstructions()
+        void dealerInstructions(int round)
         {
-            int round = 0; //delete later
             string sInstruction;
             switch (round)
             {
@@ -159,7 +197,7 @@ namespace _21CardGame
                     sInstruction = "All right last time, click the Column your card is in.";
                     break;
                 default:
-                    sInstruction = "Your card is the " + "card" + ".";
+                    sInstruction = "Your card is the " + oBoard.dealer.RevealCard() + ".";
                     break;
             }
             txtBlkDealer.Text = sInstruction;

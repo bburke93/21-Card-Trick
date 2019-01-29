@@ -11,7 +11,7 @@ namespace _21CardGame
         /// <summary>
         /// Count of how many times the cards have been dealt out
         /// </summary>
-        public int dealNumber = 0;
+        public int dealNumber = 1;
 
         /// <summary>
         /// Full 52 card deck
@@ -21,7 +21,7 @@ namespace _21CardGame
         /// <summary>
         /// The random 21 cards taken from the full deck
         /// </summary>
-        private List<Card> randomDeck;
+        public List<Card> randomDeck;
 
         public Dealer()
         {

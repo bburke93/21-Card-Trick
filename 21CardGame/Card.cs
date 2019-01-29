@@ -8,10 +8,10 @@ namespace _21CardGame
 {
     class Card
     {
-        public enum Suit { Hearts,Diamonds,Clubs,Spades };
-        public enum Face { Two,Three,Four,Five,Six,Seven,Eight,Nine,Ten,Jack,King,Queen,Ace}
-        private Suit suit;
-        private Face face;
+        public enum Suit { hearts,diamonds,clubs,spades};
+        public enum Face {two=2,three,four,five,six,seven,eight,nine,ten,jack,king,queen,ace}
+        public Suit suit;
+        public Face face;
         
         public Card(Suit cardSuit, Face cardFace)
         {
@@ -40,12 +40,21 @@ namespace _21CardGame
         /// <returns>int</returns>
         public int GetSuitInt() { return (int)suit; }
 
-        public String GetCardName()
+        public override string ToString()
         {
-            String faceStr = face.ToString();
+            String faceStr;
+            if (face == Face.jack || face == Face.king || face == Face.queen || face == Face.ace)
+            {
+                faceStr = face.ToString();
+            }
+            else
+            {
+                faceStr = ((int)face).ToString();
+            }
+
             String suitStr = suit.ToString();
             //Ex:Two of Diamonds
-            return (faceStr + " of " + suitStr);
+            return (faceStr + "_of_" + suitStr + ".png");
         }
     }
 }

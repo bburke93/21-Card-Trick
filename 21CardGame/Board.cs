@@ -8,10 +8,10 @@ namespace _21CardGame
 {
     class Board
     {
-        Dealer dealer = new Dealer();
-        Column column1 = new Column();
-        Column column2 = new Column();
-        Column column3 = new Column();
+        public Dealer dealer = new Dealer();
+        public Column column1 = new Column();
+        public Column column2 = new Column();
+        public Column column3 = new Column();
 
         public Board()
         {
