@@ -106,6 +106,11 @@ namespace _21CardGame
         {
             try
             {
+                //clear boarders
+                borderColumn1.BorderThickness = new Thickness(0);
+                borderColumn2.BorderThickness = new Thickness(0);
+                borderColumn3.BorderThickness = new Thickness(0);
+
                 //display instructions for round
                 dealerInstructions(oBoard.dealer.dealNumber);
 
