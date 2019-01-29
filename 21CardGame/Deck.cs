@@ -16,15 +16,56 @@ namespace _21CardGame
         public Deck() {
 
             deck = new List<Card>();
+            fillDeck();
+        }
 
-            //4 suits
-            for (int i = 0;i<4; i++)
+        /// <summary>
+        /// Fill the deck with standard 52 cards
+        /// </summary>
+        private void fillDeck()
+        {
+            string suit = "clubs";
+
+            for (int i = 0; i < 4; i++)
             {
-                //13 Faces
-                for(int j = 0;j<13; j++)
+
+                if (i == 1)
                 {
-                    Card card = new Card((Card.Suit)i, (Card.Face)j);
-                    deck.Add(card);
+                    suit = "spades";
+                }
+                else if (i == 2)
+                {
+                    suit = "hearts";
+                }
+                else if (i == 3)
+                {
+                    suit = "diamonds";
+                }
+
+
+                for (int j = 1; j <= 13; j++)
+                {
+
+                    if (j == 1)
+                    {
+                        deck.Add(new Card(suit, "ace"));
+                    }
+                    else if (j == 11)
+                    {
+                        deck.Add(new Card(suit, "jack"));
+                    }
+                    else if (j == 12)
+                    {
+                        deck.Add(new Card(suit, "queen"));
+                    }
+                    else if (j == 13)
+                    {
+                        deck.Add(new Card(suit, "king"));
+                    }
+                    else
+                    {
+                        deck.Add(new Card(suit, j.ToString()));
+                    }
                 }
             }
         }

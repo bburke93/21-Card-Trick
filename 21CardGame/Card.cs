@@ -8,53 +8,30 @@ namespace _21CardGame
 {
     class Card
     {
-        public enum Suit { hearts,diamonds,clubs,spades};
-        public enum Face {two=2,three,four,five,six,seven,eight,nine,ten,jack,king,queen,ace}
-        public Suit suit;
-        public Face face;
+        public string suit;
+        public string face;
         
-        public Card(Suit cardSuit, Face cardFace)
+        public Card(string cardSuit, string cardFace)
         {
             face = cardFace;
             suit = cardSuit;
         }
-        /// <summary>
-        /// Return the card face as a Face enum
-        /// </summary>
-        /// <returns>Card.Face</returns>
-        public Face GetFace() { return face; }
-        /// <summary>
-        /// Return the card suit as a Suit enum
-        /// </summary>
-        /// <returns>Card.Suit</returns>
-        public Suit GetSuit() { return suit; }
 
         /// <summary>
-        /// Return the face as an int
+        /// Return the card face
         /// </summary>
-        /// <returns>int</returns>
-        public int GetFaceInt() { return (int)face; }
+        /// <returns>Card.Face</returns>
+        public string GetFace() { return face; }
+
         /// <summary>
-        /// Return the suit as an int
+        /// Return the card suit
         /// </summary>
-        /// <returns>int</returns>
-        public int GetSuitInt() { return (int)suit; }
+        /// <returns>Card.Suit</returns>
+        public string GetSuit() { return suit; }
 
         public override string ToString()
         {
-            String faceStr;
-            if (face == Face.jack || face == Face.king || face == Face.queen || face == Face.ace)
-            {
-                faceStr = face.ToString();
-            }
-            else
-            {
-                faceStr = ((int)face).ToString();
-            }
-
-            String suitStr = suit.ToString();
-            //Ex:Two of Diamonds
-            return (faceStr + "_of_" + suitStr + ".png");
+            return (face + "_of_" + suit + ".png");
         }
     }
 }
