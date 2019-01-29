@@ -126,6 +126,7 @@ namespace _21CardGame
                     showCards();
                     //display instructions for round
                     dealerInstructions(oBoard.dealer.dealNumber);
+
                 }
                 else
                 {
@@ -202,10 +203,20 @@ namespace _21CardGame
                     break;
                 default:
                     //sInstruction = "Your card is the " + oBoard.dealer.RevealCard() + ".";
-                    sInstruction = "Your card is the " + oBoard.column2.columnCards[3] + ".";
+                    sInstruction = "Here is Your Card!";
+                    revealCard();
                     break;
             }
             txtBlkDealer.Text = sInstruction;
+        }
+
+
+        void revealCard()
+        {
+            btnPickedCard.Visibility = Visibility.Hidden;
+            hideCards();
+
+            imgPlayerCard.Source = new BitmapImage(new Uri(@"Images/Cards/" + oBoard.column2.columnCards[3], UriKind.RelativeOrAbsolute));
         }
         #endregion
 
