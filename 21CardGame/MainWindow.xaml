@@ -28,7 +28,7 @@
         </Border>
 
         <!--Dealer-->
-        <TextBlock x:Name="txtBlkDealer" TextAlignment="Center" HorizontalAlignment="Left" Margin="78,22,0,0" Grid.Row="1" TextWrapping="Wrap" Text="Instructions" VerticalAlignment="Top" Height="128" Width="594" Grid.ColumnSpan="5" Foreground="White" FontSize="24" FontFamily="Tahoma"/>
+        <TextBlock x:Name="txtBlkDealer" TextAlignment="Center" HorizontalAlignment="Left" Margin="78,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="128" Width="594" Grid.ColumnSpan="5" Foreground="White" FontSize="24" FontFamily="Tahoma"/>
         <Button x:Name="btnStartButton" Content="Start" Grid.Column="2" HorizontalAlignment="Left" Margin="36,150,0,0" Grid.Row="1" VerticalAlignment="Top" Width="114" Height="42" Click="btnStartButtonClick"/>
         <Button x:Name="btnPickedCard" Content="Confirm Column" Grid.Column="1" HorizontalAlignment="Left" Margin="164,150,0,0" Grid.Row="1" VerticalAlignment="Top" Width="231" Height="42" Grid.ColumnSpan="3" Click="btnPickedCardClick" Visibility="Hidden"/>
 
@@ -68,7 +68,7 @@
                 </Canvas>
             </Border>
         </Canvas>
-        <Image x:Name="imgPlayerCard" Grid.Column="2" HorizontalAlignment="Left" Height="158" Margin="36,29,0,0" Grid.Row="2" VerticalAlignment="Top" Width="114" RenderTransformOrigin="0.695,-0.317"/>
+        <Image x:Name="imgPlayerCard" Grid.Column="1" HorizontalAlignment="Left" Height="370" Margin="150,127,0,0" Grid.Row="1" VerticalAlignment="Top" Width="286" RenderTransformOrigin="0.695,-0.317" Grid.ColumnSpan="3" Grid.RowSpan="2"/>
 
     </Grid>
 </Window>
