@@ -111,9 +111,6 @@ namespace _21CardGame
                 borderColumn2.BorderThickness = new Thickness(0);
                 borderColumn3.BorderThickness = new Thickness(0);
 
-                //display instructions for round
-                dealerInstructions(oBoard.dealer.dealNumber);
-
                 //if its not after the third round
                 if (oBoard.dealer.dealNumber != 4)
                 {
@@ -127,6 +124,8 @@ namespace _21CardGame
                     oBoard.dealToColumns();
                     //show in the UI
                     showCards();
+                    //display instructions for round
+                    dealerInstructions(oBoard.dealer.dealNumber);
                 }
                 else
                 {
@@ -202,7 +201,8 @@ namespace _21CardGame
                     sInstruction = "All right last time, click the Column your card is in.";
                     break;
                 default:
-                    sInstruction = "Your card is the " + oBoard.dealer.RevealCard() + ".";
+                    //sInstruction = "Your card is the " + oBoard.dealer.RevealCard() + ".";
+                    sInstruction = "Your card is the " + oBoard.column2.columnCards[3] + ".";
                     break;
             }
             txtBlkDealer.Text = sInstruction;

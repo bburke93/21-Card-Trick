@@ -60,6 +60,8 @@ namespace _21CardGame
                     break;
 
             }
+                //next round
+                dealer.dealNumber++;
         }
 
         public void dealToColumns()

@@ -52,9 +52,9 @@ namespace _21CardGame
         /// <summary>
         /// Reveal to the user the secret card they picked
         /// </summary>
-        public Card RevealCard()
+       /* public Card RevealCard()
         {
-            return randomDeck[10];
-        }
+            //return randomDeck[10];
+        }*/
     }
 }
