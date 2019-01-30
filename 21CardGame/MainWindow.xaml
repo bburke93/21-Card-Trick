@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_21CardGame"
-        mc:Ignorable="d" Height="856.308" Width="758.1" ResizeMode="CanMinimize" Cursor="Arrow" WindowStartupLocation="CenterScreen" Title="21 Card Trick Game">
+        mc:Ignorable="d" Height="856.308" Width="758.1" Cursor="Arrow" WindowStartupLocation="CenterScreen" Title="21 Card Trick Game" ResizeMode="CanMinimize" Icon="Images/Cards/red_joker.png">
     <Window.Background>
         <ImageBrush ImageSource="Images/backgroundWoodTable.jpg"/>
     </Window.Background>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,6 +111,9 @@ namespace _21CardGame
                 borderColumn1.BorderThickness = new Thickness(0);
                 borderColumn2.BorderThickness = new Thickness(0);
                 borderColumn3.BorderThickness = new Thickness(0);
+
+                SoundPlayer simpleSound = new SoundPlayer("../../Sounds/deal.wav");
+                simpleSound.Play();
 
                 //if its not after the third round
                 if (oBoard.dealer.dealNumber != 4)
